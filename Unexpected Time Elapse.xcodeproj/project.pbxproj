@@ -16,6 +16,7 @@
 		D9F6CC1328B3D69700FCB201 /* Unexpected_Time_ElapseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6CC1228B3D69700FCB201 /* Unexpected_Time_ElapseTests.swift */; };
 		D9F6CC1D28B3D69700FCB201 /* Unexpected_Time_ElapseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6CC1C28B3D69700FCB201 /* Unexpected_Time_ElapseUITests.swift */; };
 		D9F6CC1F28B3D69700FCB201 /* Unexpected_Time_ElapseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6CC1E28B3D69700FCB201 /* Unexpected_Time_ElapseUITestsLaunchTests.swift */; };
+		D9F6CC2C28B3DA3700FCB201 /* CauseAndFix.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6CC2B28B3DA3700FCB201 /* CauseAndFix.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D9F6CC1828B3D69700FCB201 /* Unexpected Time ElapseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unexpected Time ElapseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F6CC1C28B3D69700FCB201 /* Unexpected_Time_ElapseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unexpected_Time_ElapseUITests.swift; sourceTree = "<group>"; };
 		D9F6CC1E28B3D69700FCB201 /* Unexpected_Time_ElapseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unexpected_Time_ElapseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D9F6CC2B28B3DA3700FCB201 /* CauseAndFix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CauseAndFix.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				D9F6CBFB28B3D69500FCB201 /* AppDelegate.swift */,
 				D9F6CBFD28B3D69500FCB201 /* SceneDelegate.swift */,
 				D9F6CBFF28B3D69500FCB201 /* ViewController.swift */,
+				D9F6CC2B28B3DA3700FCB201 /* CauseAndFix.swift */,
 				D9F6CC0128B3D69500FCB201 /* Main.storyboard */,
 				D9F6CC0428B3D69700FCB201 /* Assets.xcassets */,
 				D9F6CC0628B3D69700FCB201 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 				D9F6CC0028B3D69500FCB201 /* ViewController.swift in Sources */,
 				D9F6CBFC28B3D69500FCB201 /* AppDelegate.swift in Sources */,
 				D9F6CBFE28B3D69500FCB201 /* SceneDelegate.swift in Sources */,
+				D9F6CC2C28B3DA3700FCB201 /* CauseAndFix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
