@@ -8,12 +8,16 @@
 import Foundation
 
 class ColdValueIncrementTimer {
+    
     private var counter: UInt = 0
     private var timer: Timer?
-    private let tolerance: Double
-    private let refreshRate: Int
     
-    init(refreshRate: Int, tolerance: Double) {
+    private let tolerance: Double
+    private let refreshRate: Double
+    
+    internal let COLDVALUE_MAX: Float = 60 * 20
+    
+    init(refreshRate: Double, tolerance: Double) {
         self.refreshRate = refreshRate
         self.tolerance = tolerance
     }
@@ -27,13 +31,9 @@ class ColdValueIncrementTimer {
     internal func start() {
         counter = 0
         
-        timer = Timer.scheduledTimer(timeInterval: TimeInterval(1 / refreshRate), target: self, selector: #selector(coldValueIncrement), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1 / refreshRate, target: self, selector: #selector(coldValueIncrement), userInfo: nil, repeats: true)
         timer?.tolerance = tolerance
         RunLoop.current.add(timer!, forMode: .common)
-    }
-    
-    internal func pause() {
-        timer?.invalidate()
     }
     
     internal func end() {
@@ -43,6 +43,6 @@ class ColdValueIncrementTimer {
     
     @objc private func coldValueIncrement() {
         counter = counter &+ 1
-        NotificationCenter.default.post(name: Notification.Name("Update Cold Value Progress View"), object: counter)
+        NotificationCenter.default.post(name: Notification.Name("Cold Value Increment"), object: counter)
     }
 }
