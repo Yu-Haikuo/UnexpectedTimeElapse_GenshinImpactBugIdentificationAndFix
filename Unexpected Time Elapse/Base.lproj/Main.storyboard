@@ -47,7 +47,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="afterFixLabel" destination="5IQ-v3-wmF" id="stV-bn-yY2"/>
                         <outlet property="afterFixProgressView" destination="Pvg-TE-bvh" id="1K7-So-FSN"/>
+                        <outlet property="beforeFixLabel" destination="h1j-9U-VtW" id="701-Xq-2V5"/>
                         <outlet property="beforeFixProgressView" destination="XCG-wz-Zgx" id="gtK-F8-gNG"/>
                     </connections>
                 </viewController>
