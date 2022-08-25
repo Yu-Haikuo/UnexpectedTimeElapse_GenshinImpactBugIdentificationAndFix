@@ -9,17 +9,20 @@ import Foundation
 
 class ColdValueIncrementTimer {
     
-    private var counter: UInt = 0
-    private var timer: Timer?
+    internal var counter: UInt = 0
+    internal var timer: Timer?
     
-    private let tolerance: Double
-    private let refreshRate: Double
+    internal let tolerance: Double
+    internal let refreshRate: Double
+    internal let totalDurationInSeconds: Float
     
-    internal let COLDVALUE_MAX: Float = 60 * 20
+    internal let COLDVALUE_MAX: Float
     
-    init(refreshRate: Double, tolerance: Double) {
+    init(refreshRate: Double, tolerance: Double, totalDurationInSeconds: Float) {
         self.refreshRate = refreshRate
         self.tolerance = tolerance
+        self.totalDurationInSeconds = totalDurationInSeconds
+        self.COLDVALUE_MAX = totalDurationInSeconds * 60
     }
     
     deinit {
@@ -30,6 +33,7 @@ class ColdValueIncrementTimer {
     // To be called by external function like GameCharacter:: didEnterDragonSpine().
     internal func start() {
         counter = 0
+        timer?.invalidate()
         
         timer = Timer.scheduledTimer(timeInterval: 1 / refreshRate, target: self, selector: #selector(coldValueIncrement), userInfo: nil, repeats: true)
         timer?.tolerance = tolerance
@@ -41,8 +45,28 @@ class ColdValueIncrementTimer {
         counter = 0
     }
     
-    @objc private func coldValueIncrement() {
+    @objc internal func coldValueIncrement() {
         counter = counter &+ 1
-        NotificationCenter.default.post(name: Notification.Name("Cold Value Increment"), object: counter)
+        NotificationCenter.default.post(name: Notification.Name("Before Fix Cold Value Increment"), object: counter)
+    }
+}
+
+// Added resume() and pause() and overrided coldValueIncrement() to fix unwanted time elapse.
+class FixedColdValueIncrementTimer: ColdValueIncrementTimer {
+    
+    internal func resume() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1 / refreshRate, target: self, selector: #selector(coldValueIncrement), userInfo: nil, repeats: true)
+        timer?.tolerance = tolerance
+        RunLoop.current.add(timer!, forMode: .common)
+    }
+    
+    internal func pause() {
+        timer?.invalidate()
+    }
+    
+    override func coldValueIncrement() {
+        counter = counter &+ 1
+        NotificationCenter.default.post(name: Notification.Name("After Fix Cold Value Increment"), object: counter)
     }
 }
