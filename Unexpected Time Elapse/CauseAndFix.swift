@@ -18,6 +18,8 @@ class ColdValueIncrementTimer {
     
     internal let COLDVALUE_MAX: Float
     
+    internal let notification = NotificationBroadcast()
+    
     init(refreshRate: Double, tolerance: Double, totalDurationInSeconds: Float) {
         self.refreshRate = refreshRate
         self.tolerance = tolerance
@@ -47,7 +49,7 @@ class ColdValueIncrementTimer {
     
     @objc internal func coldValueIncrement() {
         counter = counter &+ 1
-        NotificationCenter.default.post(name: Notification.Name("Before Fix Cold Value Increment"), object: counter)
+        notification.post("Before Fix Cold Value Increment", object: counter)
     }
 }
 
@@ -67,6 +69,6 @@ class FixedColdValueIncrementTimer: ColdValueIncrementTimer {
     
     override func coldValueIncrement() {
         counter = counter &+ 1
-        NotificationCenter.default.post(name: Notification.Name("After Fix Cold Value Increment"), object: counter)
+        notification.post("After Fix Cold Value Increment", object: counter)
     }
 }

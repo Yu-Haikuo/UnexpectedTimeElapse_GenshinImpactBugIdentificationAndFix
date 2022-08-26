@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var beforeFixLabel: UILabel!
     @IBOutlet weak var afterFixLabel: UILabel!
     
+    private let notification = NotificationBroadcast()
     private let beforeFixTimer = ColdValueIncrementTimer(refreshRate: 60, tolerance: 1 / 600, totalDurationInSeconds: 20)
     private let afterFixTimer = FixedColdValueIncrementTimer(refreshRate: 60, tolerance: 1 / 600, totalDurationInSeconds: 20)
     
@@ -30,10 +31,10 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        NotificationCenter.default.addObserver(self, selector: #selector(updateBeforeFixProgressView(notification:)), name: Notification.Name("Before Fix Cold Value Increment"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateAfterFixProgressView(notification:)), name: Notification.Name("After Fix Cold Value Increment"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateBeforeFixLabel(notification:)), name: Notification.Name("Before Fix Cold Value Increment"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateAfterFixLabel(notification:)), name: Notification.Name("After Fix Cold Value Increment"), object: nil)
+        notification.addObserver(self, #selector(updateBeforeFixProgressView(notification:)), "Before Fix Cold Value Increment", object: nil)
+        notification.addObserver(self, #selector(updateAfterFixProgressView(notification:)), "After Fix Cold Value Increment", object: nil)
+        notification.addObserver(self, #selector(updateBeforeFixLabel(notification:)), "Before Fix Cold Value Increment", object: nil)
+        notification.addObserver(self, #selector(updateAfterFixLabel(notification:)), "After Fix Cold Value Increment", object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,18 +42,18 @@ class ViewController: UIViewController {
         afterFixTimer.start()
         
         if #available(iOS 13.0, *) {
-            NotificationCenter.default.addObserver(self, selector: #selector(applicationWillBecomeInactive), name: UIScene.willDeactivateNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIScene.didActivateNotification, object: nil)
+            notification.addObserver(self, #selector(applicationWillBecomeInactive), UIScene.willDeactivateNotification, object: nil)
+            notification.addObserver(self, #selector(applicationDidBecomeActive), UIScene.didActivateNotification, object: nil)
         } else {
-            NotificationCenter.default.addObserver(self, selector: #selector(applicationWillBecomeInactive), name: UIApplication.willResignActiveNotification, object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+            notification.addObserver(self, #selector(applicationWillBecomeInactive), UIApplication.willResignActiveNotification, object: nil)
+            notification.addObserver(self, #selector(applicationDidBecomeActive), UIApplication.didBecomeActiveNotification, object: nil)
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         beforeFixTimer.end()
         afterFixTimer.end()
-        NotificationCenter.default.removeObserver(self)
+        notification.removeAllObserverFrom(self)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
