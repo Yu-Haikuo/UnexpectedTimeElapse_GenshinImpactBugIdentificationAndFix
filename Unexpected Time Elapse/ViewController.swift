@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var afterFixLabel: UILabel!
     
     private let notification = NotificationBroadcast()
-    private let beforeFixTimer = ColdValueIncrementTimer(refreshRate: 60, tolerance: 1 / 600, totalDurationInSeconds: 20)
-    private let afterFixTimer = FixedColdValueIncrementTimer(refreshRate: 60, tolerance: 1 / 600, totalDurationInSeconds: 20)
+    private let beforeFixTimer = ColdValueIncrementTimer(refreshRate: 60, tolerance: 1 / 600, totalDurationInSeconds: 15)
+    private let afterFixTimer = FixedColdValueIncrementTimer(refreshRate: 60, tolerance: 1 / 600, totalDurationInSeconds: 15)
     
     override func viewDidLoad() {
         super.viewDidLoad()
