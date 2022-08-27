@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D907DBF128B77EEC000726BF /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D907DBF028B77EEC000726BF /* Notification.swift */; };
 		D9F6CBFC28B3D69500FCB201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6CBFB28B3D69500FCB201 /* AppDelegate.swift */; };
 		D9F6CBFE28B3D69500FCB201 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6CBFD28B3D69500FCB201 /* SceneDelegate.swift */; };
 		D9F6CC0028B3D69500FCB201 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6CBFF28B3D69500FCB201 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D907DBF028B77EEC000726BF /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		D9F6CBF828B3D69500FCB201 /* Unexpected Time Elapse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unexpected Time Elapse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F6CBFB28B3D69500FCB201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9F6CBFD28B3D69500FCB201 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,8 +105,9 @@
 			children = (
 				D9F6CBFB28B3D69500FCB201 /* AppDelegate.swift */,
 				D9F6CBFD28B3D69500FCB201 /* SceneDelegate.swift */,
-				D9F6CBFF28B3D69500FCB201 /* ViewController.swift */,
+				D907DBF028B77EEC000726BF /* Notification.swift */,
 				D9F6CC2B28B3DA3700FCB201 /* CauseAndFix.swift */,
+				D9F6CBFF28B3D69500FCB201 /* ViewController.swift */,
 				D9F6CC0128B3D69500FCB201 /* Main.storyboard */,
 				D9F6CC0428B3D69700FCB201 /* Assets.xcassets */,
 				D9F6CC0628B3D69700FCB201 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9F6CC0028B3D69500FCB201 /* ViewController.swift in Sources */,
+				D907DBF128B77EEC000726BF /* Notification.swift in Sources */,
 				D9F6CBFC28B3D69500FCB201 /* AppDelegate.swift in Sources */,
 				D9F6CBFE28B3D69500FCB201 /* SceneDelegate.swift in Sources */,
 				D9F6CC2C28B3DA3700FCB201 /* CauseAndFix.swift in Sources */,
