@@ -15,21 +15,33 @@ class NotificationBroadcast {
     }
     
     public func addObserver<NotificationName>(_ observer: Any, _ selector: Selector, _ name: NotificationName, object: Any?) {
-        if name is String {
+        switch name {
+        case _ where name is String:
             let notificationName = Notification.Name(rawValue: name as! String)
             NotificationCenter.default.addObserver(observer, selector: selector, name: notificationName, object: object)
-        } else if name is Notification.Name {
+            
+        case _ where name is Notification.Name:
             let notificationName = name as! NSNotification.Name
             NotificationCenter.default.addObserver(observer, selector: selector, name: notificationName , object: object)
-        } else {
+            
+        default:
             print("Notification Name Type Error!")
-            return
         }
     }
     
-    public func removeObserver(_ observer: Any, _ name: String, object: Any?) {
-        let notificationName = Notification.Name(rawValue: name)
-        NotificationCenter.default.removeObserver(observer, name: notificationName, object: object)
+    public func removeObserver<NotificationName>(_ observer: Any, _ name: NotificationName, object: Any?) {
+        switch name {
+        case _ where name is String:
+            let notificationName = Notification.Name(rawValue: name as! String)
+            NotificationCenter.default.removeObserver(observer, name: notificationName, object: object)
+            
+        case _ where name is Notification.Name:
+            let notificationName = name as! Notification.Name
+            NotificationCenter.default.removeObserver(self, name: notificationName, object: object)
+            
+        default:
+            print("Notification Name Type Error!")
+        }
     }
     
     public func removeAllObserverFrom(_ observer: Any) {
