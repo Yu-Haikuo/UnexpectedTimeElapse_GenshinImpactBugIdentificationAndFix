@@ -72,7 +72,7 @@ Base on my own speculation, Genshin Impact handles most of the calculations in t
 
 The game has to maintain the communication with the server when it runs, and if the communication is disconnected, the server will mark the current account as "offline", and force to overwrite the iOS application local data with the latest `snapshot` the next time when communication resumes. This is to ensure the authenticity of the data and avoid local tampering. 
 
-游戏运行中需要一直保持与服务器的通信，如果服务器与 iOS 应用的通信断开，服务器会将当前账号标记称为“离线”，并且再下次与iOS应用通信的时候使用最新的`快照`强制覆盖iOS本地数据。这样做是为了保证数据的真实性，避免用户本地进行篡改。
+游戏运行中需要一直保持与服务器的通信，如果服务器与 iOS 应用的通信断开，服务器会将当前账号标记称为“离线”，并且再下次与 iOS 应用通信的时候使用最新的`快照`强制覆盖 iOS 本地数据。这样做是为了保证数据的真实性，避免用户本地进行篡改。
 
 ***
 
