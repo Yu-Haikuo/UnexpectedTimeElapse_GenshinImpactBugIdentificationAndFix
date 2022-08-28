@@ -50,7 +50,7 @@ Wait for Genshin Impact to load and restore from the snapshot. It can be seen th
 
 When Genshin Impact restores from snapshot, all properties of the character and surroundings should also get restored.
 
-当原神从快照中恢复的时候，所有的角色的属性已经环境应该也被恢复。
+当原神从快照中恢复的时候，所有的角色的属性以及环境应该也被恢复。
 
 ![IMG_7144.PNG](https://github.com/Yu-Haikuo/UnexpectedTimeElapse_GenshinImpactBugIdentificationAndFix/blob/main/_resources/IMG_7144.PNG)
 
