@@ -107,12 +107,12 @@ extension ViewController {
     
     @objc private func applicationWillBecomeInactive() {
         afterFixTimer.pause()
-        print("Application will lose focus!")
+        print("Application will become inactive!")
     }
     
     @objc private func applicationDidBecomeActive() {
         afterFixTimer.resume()
-        print("Application will enter foreground!")
+        print("Application did become active!")
     }
 }
 
