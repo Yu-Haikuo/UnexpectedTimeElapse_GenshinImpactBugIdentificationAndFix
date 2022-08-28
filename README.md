@@ -36,7 +36,9 @@ Next, spend some time with other applications (approximately 1min). After that, 
 
 随后使用其他应用一段时间（大约1分钟）。随后，返回原神。
 
-![IMG_7146.PNG](https://github.com/Yu-Haikuo/UnexpectedTimeElapse_GenshinImpactBugIdentificationAndFix/blob/main/_resources/IMG_7146.PNG)
+<p align="center">
+    <img height="700" src="https://github.com/Yu-Haikuo/UnexpectedTimeElapse_GenshinImpactBugIdentificationAndFix/blob/main/_resources/IMG_7146.PNG">
+</p>
 
 Wait for Genshin Impact to load and restore from the snapshot. It can be seen that the cold value has increased by some value compared to when we jumped off, and the sky also gets dark. 
 
@@ -148,19 +150,21 @@ extension ViewController {
     
     @objc private func applicationWillBecomeInactive() {
         afterFixTimer.pause()
-        print("Application will lose focus!")
+        print("Application will become inactive!")
     }
     
     @objc private func applicationDidBecomeActive() {
         afterFixTimer.resume()
-        print("Application will enter foreground!")
+        print("Application did become active!")
     }
 }
 ```
 
 ## Running Result 运行效果
 
-![DemoApplication.gif](https://github.com/Yu-Haikuo/UnexpectedTimeElapse_GenshinImpactBugIdentificationAndFix/blob/main/_resources/DemoApplication.gif)
+<p align="center">
+    <img height="700" width="324" src="https://github.com/Yu-Haikuo/UnexpectedTimeElapse_GenshinImpactBugIdentificationAndFix/blob/main/_resources/DemoApplication.gif">
+</p>
 
 ## References 参考
 
