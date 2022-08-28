@@ -74,7 +74,7 @@ The game has to maintain the communication with the server when it runs, and if 
 
 ***
 
-In theory, the game should be able to restore all the state from the `snapshot`, including character state, location, collected materials, etc. But we notice that all time-related attributes are not restored properly, and the time continues to elapse for a while. **Therefore, it can be inferred that the timer in Genshin Impact is implemented locally and the time-related attributes will not be uploaded and saved in the `snapshot`, either (because if the `snapshot` contains time-related attributes, this problem might not exist). **
+In theory, the game should be able to restore all the state from the `snapshot`, including character state, location, collected materials, etc. But we notice that all time-related attributes are not restored properly, and the time continues to elapse for a while. **Therefore, it can be inferred that the timer in Genshin Impact is implemented locally and the time-related attributes will not be uploaded and saved in the `snapshot`, either (because if the `snapshot` contains time-related attributes, this problem might not exist).**
 
 理论上，游戏应该能从`快照`中恢复到保存快照时的所有状态，包括角色状态、位置、已有材料等等。但是在我们注意到，所有和时间有关的属性并没有被正确恢复，并且时间继续流逝了一段时间。**因此可以推断出，原神中的计时器实现于本地，并且和时间有关的属性并不会被上传并保存在`快照`里（因为如果`快照`保存有时间有关的属性的话，这个问题可能并不存在）。**
 
